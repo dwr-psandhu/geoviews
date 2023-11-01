@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>Releases — GeoViews v1.11.0</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" rel="stylesheet" type="text/css"/>
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/scroller.css" rel="stylesheet" type="text/css"/>
+<link href="_static/custom.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/sphinx_highlight.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/design-tabs.js"></script>
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-XTWHHEZL7Q"></script>
+<script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-XTWHHEZL7Q');
+            </script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'releases';</script>
+<link href="_static/favicon.ico" rel="shortcut icon"/>
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="about.html" rel="next" title="About"/>
+<link href="topics.html" rel="prev" title="Topics"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="index.html">
+<img alt="Logo image" class="logo__image only-light" src="_static/logo_horizontal.png"/>
+<script>document.write(`<img src="_static/logo_horizontal.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="index.html">
+                        Home
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="user_guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="gallery/index.html">
+                        Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="topics.html">
+                        Topics
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Releases
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/geoviews" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViews" rel="noopener" target="_blank" title="Twitter"><span><i class="fa-brands fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/c/geoviews" rel="noopener" target="_blank" title="Discourse"><span><i class="fa-brands fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discord.gg/AXRHnJU6sP" rel="noopener" target="_blank" title="Discord"><span><i class="fa-brands fa-discord"></i></span>
+<label class="sr-only">Discord</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="index.html">
+                        Home
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="user_guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="gallery/index.html">
+                        Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="topics.html">
+                        Topics
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Releases
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/geoviews" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViews" rel="noopener" target="_blank" title="Twitter"><span><i class="fa-brands fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/c/geoviews" rel="noopener" target="_blank" title="Discourse"><span><i class="fa-brands fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discord.gg/AXRHnJU6sP" rel="noopener" target="_blank" title="Discord"><span><i class="fa-brands fa-discord"></i></span>
+<label class="sr-only">Discord</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="user_guide/index.html">User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Projections.html">Projections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Geometries.html">Geometries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Gridded_Datasets_I.html">Gridded Datasets I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Gridded_Datasets_II.html">Gridded Datasets II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Working_with_Bokeh.html">Working with Bokeh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Resampling_Grids.html">Resampling Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Annotators.html">Annotating Geographic Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Using_Features_Offline.html">Using Features Offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/Using_WMTS_Offline.html">Using WMTS Offline</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="gallery/index.html">Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="topics.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://examples.pyviz.org/bay_trimesh/bay_trimesh.html">Bay Trimesh</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://examples.pyviz.org/census/census.html">Census</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://examples.pyviz.org/gerrymandering/gerrymandering.html">Gerrymandering</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://examples.pyviz.org/glaciers/glaciers.html">Glaciers</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://examples.pyviz.org/landsat/landsat.html">LandSat</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Releases</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="releases">
+<h1>Releases<a class="headerlink" href="#releases" title="Permalink to this heading">#</a></h1>
+<section id="version-1-11-0">
+<h2>Version 1.11.0<a class="headerlink" href="#version-1-11-0" title="Permalink to this heading">#</a></h2>
+<p>Date: November 1, 2023</p>
+<p>This release brings compatibility with the latest versions of Bokeh
+(3.3) and Python (3.12), while also discontinuing support for Python
+3.8. Many thanks to @ahuang11, @maximlt, @philippjfr, and @Hoxbro for
+their ongoing contributions.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">VectorField</span></code>/<code class="docutils literal notranslate"><span class="pre">WindBarbs</span></code> <code class="docutils literal notranslate"><span class="pre">project</span></code> operation
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/296">#296</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to all <code class="docutils literal notranslate"><span class="pre">get_extents</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/670">#670</a>)</p></li>
+<li><p>Update to use <code class="docutils literal notranslate"><span class="pre">self.param.warning</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/672">#672</a>)</p></li>
+<li><p>Set default <code class="docutils literal notranslate"><span class="pre">zoom_level</span></code> on <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>’s WMTS to 3 from 8
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/685">#685</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">np.NaN</span></code> with <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/680">#680</a>)</p></li>
+<li><p>Update to support Bokeh 3.3 and Python 3.12 and drop Python 3.8
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/683">#683</a>)</p></li>
+<li><p>Update to support Python 3.12 and drop Python 3.8
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/683">#683</a>)</p></li>
+<li><p>Update Stamen maps
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/684">#684</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Update GeoViews installation
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/669">#669</a>)</p></li>
+<li><p>Remove calling <code class="docutils literal notranslate"><span class="pre">.cols(3)</span></code> on the homepage
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/681">#681</a>)</p></li>
+</ul>
+<p>Maintenance:</p>
+<ul class="simple">
+<li><p>Add <a class="reference external" href="https://opencollective.com/holoviz">OpenCollective</a> sponsor
+link on the repo page
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/666">#666</a>)</p></li>
+<li><p>General maintenance update
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/668">#668</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/675">#675</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/676">#676</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-10-1">
+<h2>Version 1.10.1<a class="headerlink" href="#version-1-10-1" title="Permalink to this heading">#</a></h2>
+<p>Date: July 20, 2023</p>
+<p>This micro release adds support for Bokeh 3.2. More maps are added to
+Geoviews with <code class="docutils literal notranslate"><span class="pre">xyzservices</span></code> and many more maps from ESRI. WindBarbs
+plot is now supported in the Matplotlib backend. Many thanks to
+@djm93dev for his first contribution and also @ahuang11, @maximlt,
+@philippjfr, and @Hoxbro for their continuous contributions.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Add WindBarbs to the Matplotlib Backend
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/651">#651</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/662">#662</a>)</p></li>
+<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">xyzservices</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/654">#654</a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">World_Physical_Map</span></code>, <code class="docutils literal notranslate"><span class="pre">World_Shaded_Relief</span></code> and
+<code class="docutils literal notranslate"><span class="pre">World_Topo_Map</span></code> and many more maps from ESRI
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/655">#655</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Add documentation for GeoViews offline features and tiles
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/649">#649</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Add Bokeh 3.2 support to GeoViews
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/664">#664</a>)</p></li>
+<li><p>Improve <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> support
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/645">#645</a>)</p></li>
+<li><p>Remove deprecated <code class="docutils literal notranslate"><span class="pre">np.product</span></code> for <code class="docutils literal notranslate"><span class="pre">np.prod</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/660">#660</a>)</p></li>
+</ul>
+<p>Maintenance:</p>
+<ul class="simple">
+<li><p>General maintenance
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/648">#648</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/652">#652</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/653">#653</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/657">#657</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/661">#661</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-10-0">
+<h2>Version 1.10.0<a class="headerlink" href="#version-1-10-0" title="Permalink to this heading">#</a></h2>
+<p>Date: May 25, 2023</p>
+<p>This release adds Bokeh 3 support to Geoviews, along with bug fixes and
+enhancements. Many thanks to @ahuang11, @maximlt, @philippjfr, and @Hoxbro.</p>
+<p>This release also deprecates the <code class="docutils literal notranslate"><span class="pre">Wikipedia</span></code> tile source. If you are
+using this tile source, please switch to the <code class="docutils literal notranslate"><span class="pre">OSM</span></code> tile source
+instead. The <code class="docutils literal notranslate"><span class="pre">Wikipedia</span></code> tile source will be removed in version
+1.11.0. <code class="docutils literal notranslate"><span class="pre">geoviews.util.load_tiff</span></code> has also been deprecated
+<code class="docutils literal notranslate"><span class="pre">rioxarray.open_rasterio</span></code> to load GeoTIFFs into a
+<code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>.</p>
+<p>Note, this release has a minor breaking change where <cite>gv.feature.states</cite>
+defaults to <cite>fill_color=None</cite> so the fill color is transparent.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Add Bokeh 3 support to GeoViews
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/625">#625</a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">PandasAPI</span></code> to <code class="docutils literal notranslate"><span class="pre">GeoPandasInterface</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/620">#620</a>)</p></li>
+<li><p>Updated the default for <code class="docutils literal notranslate"><span class="pre">gv.feature.states</span></code> to <code class="docutils literal notranslate"><span class="pre">fill_color=None</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/643">#643</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix hover for overlays of <code class="docutils literal notranslate"><span class="pre">gv.Points</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/631">#631</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> to have any number of <code class="docutils literal notranslate"><span class="pre">kdims</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/626">#626</a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">pyproj</span></code> to the runtime dependencies
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/627">#627</a>)</p></li>
+<li><p>HoloViews 1.16 support
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/633">#633</a>)</p></li>
+<li><p>Deprecate Wikipedia tile
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/630">#630</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/636">#636</a>)</p></li>
+<li><p>Use Geodatasets for geo datasets
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/635">#635</a>)</p></li>
+<li><p>Deprecate <code class="docutils literal notranslate"><span class="pre">geoviews.util.load_tiff</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/640">#640</a>)</p></li>
+</ul>
+<p>Maintenance:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ruff</span></code> as a formatting tool
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/628">#628</a>)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">codespell</span></code> as a spelling checker
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/641">#641</a>)</p></li>
+<li><p>General maintenance
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/602">#602</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/630">#630</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/632">#632</a>)</p></li>
+<li><p>Update to latest <code class="docutils literal notranslate"><span class="pre">nbsite</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/638">#638</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-6">
+<h2>Version 1.9.6<a class="headerlink" href="#version-1-9-6" title="Permalink to this heading">#</a></h2>
+<p>Date: Jan 17, 2023</p>
+<p>This release contains a small number of bug fixes and compatibility with
+the latest releases of Numpy and Shapely. Many thanks to @pmav99,
+@philippjfr, @maximlt, and @Hoxbro.</p>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix regression and remove deprecation warnings for <code class="docutils literal notranslate"><span class="pre">gv.annotators</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/583">#583</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Compatibility with Shapely 2.0
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/570">#570</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/603">#603</a>)</p></li>
+<li><p>Compatibility with Numpy 1.24
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/608">#608</a>)</p></li>
+<li><p>Compatibility with HoloViews 1.15
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/572">#572</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/574">#574</a>)</p></li>
+<li><p>Compatibility with Python 3.11
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/601">#601</a>)</p></li>
+</ul>
+<p>Packaging:</p>
+<ul class="simple">
+<li><p>Fix TypeScript files not being packaged and therefore gave an
+uncaught error in the console for <code class="docutils literal notranslate"><span class="pre">gv.annotators</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/610">#610</a>)</p></li>
+<li><p>Fix building with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> and update of packages
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/575">#575</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/579">#579</a>)</p></li>
+<li><p>Setting NPM access to public and update <code class="docutils literal notranslate"><span class="pre">package.json</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/585">#585</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/586">#586</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Fix docs build
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/580">#580</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/588">#588</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/611">#611</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/612">#612</a>)</p></li>
+</ul>
+<p>Maintenance:</p>
+<ul class="simple">
+<li><p>Adding pre-commit to CI
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/604">#604</a>)</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">master</span></code> branch to <code class="docutils literal notranslate"><span class="pre">main</span></code>
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/606">#606</a>)</p></li>
+<li><p>Remove Trove Classifier for Python 3.6
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/565">#565</a>)</p></li>
+<li><p>Various fixes and general maintenance of the CI
+(<a class="reference external" href="https://github.com/holoviz/geoviews/pull/566">#566</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/567">#567</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/569">#569</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/573">#573</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/587">#587</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/591">#591</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/594">#594</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/595">#595</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/596">#596</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/600">#600</a>,
+<a class="reference external" href="https://github.com/holoviz/geoviews/pull/607">#607</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-5">
+<h2>Version 1.9.5<a class="headerlink" href="#version-1-9-5" title="Permalink to this heading">#</a></h2>
+<p>Date: Mar 8, 2022</p>
+<p>This is a micro release fixes a regression introduced in the 1.9.4 release.</p>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix regression related to RGB(A) element conversion: (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/562">#562</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-4">
+<h2>Version 1.9.4<a class="headerlink" href="#version-1-9-4" title="Permalink to this heading">#</a></h2>
+<p>Date: Feb 17, 2022</p>
+<p>This is a micro release with a small number of bug fixes and compatibility fixes with HoloViews 1.14.8 and support for Python 3.10.</p>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix handling of 3-channel RGB element (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/558">#558</a>)</p></li>
+<li><p>Add support for pandas Float64Array (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/559">#559</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Compatibility with HoloViews 1.14.8 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/556">#556</a>)</p></li>
+<li><p>Compatibility with Python 3.10 by replacing LooseVersion with packaging.Version (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/555">#555</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-3">
+<h2>Version 1.9.3<a class="headerlink" href="#version-1-9-3" title="Permalink to this heading">#</a></h2>
+<p>This release contains a few bug fixes and improvements, and adds compatibility with Shapely 1.8 and the upcoming version 2.0. Thanks to @philippjfr, @maximlt and @ahuang11 for contributing to this release.</p>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Add missing _process_msg method to GeoPolyEditCallback (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/539">#539</a>)</p></li>
+<li><p>Accept lowercase xmin/ymin/xmax/ymax in WMTS URL templates (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/542">#542</a>)</p></li>
+<li><p>Support GeoDataframe with a geometry column not named geometry (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/545">#545</a>)</p></li>
+<li><p>Add opentopomap as a tile source (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/514">#514</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Adapt to shapely 1.8.0 and 2.0 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/543">#543</a>)</p></li>
+</ul>
+<p>Docs improvements:</p>
+<ul class="simple">
+<li><p>Update the CSS of links (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/544">#544</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-2">
+<h2>Version 1.9.2<a class="headerlink" href="#version-1-9-2" title="Permalink to this heading">#</a></h2>
+<p>Minor release by @philippjfr for Bokeh 2.4 compatibility:</p>
+<ul class="simple">
+<li><p>Rebuild extensions for Bokeh &gt;=2.4 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/525">#525</a>)</p></li>
+<li><p>Require cartopy&gt;=0.18 to match conda-forge recipe</p></li>
+<li><p>Fix compatibility with upcoming HoloViews 2.0</p></li>
+<li><p>Switch website to pydata_sphinx_theme (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/528">#528</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-9-1">
+<h2>Version 1.9.1<a class="headerlink" href="#version-1-9-1" title="Permalink to this heading">#</a></h2>
+<p>This micro-release fixes the bundling and deployment of geoviews.js to NPM but otherwise has no contents.</p>
+</section>
+<section id="version-1-9-0">
+<h2>Version 1.9.0<a class="headerlink" href="#version-1-9-0" title="Permalink to this heading">#</a></h2>
+<p>This GeoViews release primarily provides compatibility with the latest releases of Cartopy (0.18), Bokeh (2.3), HoloViews (1.14.x) and fixes a number of other issues.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Add utility to download tile RGB (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/458">#458</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Compatibility with Bokeh 2.3 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/487">#487</a>)</p></li>
+<li><p>Compatibility for regridding with latest xesmf (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/488">#488</a>)</p></li>
+<li><p>Compatibility with HoloViews 1.14.x for resampling operation and stream callback (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/488">#488</a>)</p></li>
+<li><p>Compatibility with latest Cartopy 0.18 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/488">#488</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Allow using geopandas interface without using geometry column (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/464">#464</a>)</p></li>
+<li><p>Fix Hover tooltip projection (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/490">#490</a>)</p></li>
+<li><p>Use the set geometry column on Geopandas DataFrames (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/489">#489</a>)</p></li>
+<li><p>Fix xesmf regridding file_pattern parameter (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/491">#491</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-8-2">
+<h2>Version 1.8.2<a class="headerlink" href="#version-1-8-2" title="Permalink to this heading">#</a></h2>
+<p>Minor bugfix release. Includes contributions from: @philippjfr</p>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Bump geoviews.js version and bokeh requirements (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/473">#473</a>)</p></li>
+<li><p>Handle proj4.js API change in Hover formatter (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/472">#472</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-8-1">
+<h2>Version 1.8.1<a class="headerlink" href="#version-1-8-1" title="Permalink to this heading">#</a></h2>
+<p>This fixes some minor incompatibilities between latest HoloViews and the Iris data interface in GeoViews.</p>
+<ul class="simple">
+<li><p>Updated Iris interface for compatibility with HoloViews 1.13.x (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/453">#453</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-8-0">
+<h2>Version 1.8.0<a class="headerlink" href="#version-1-8-0" title="Permalink to this heading">#</a></h2>
+<p>This release makes introduces no actual changes on top of version 1.7.0, it simply adds a dependency on bokeh&gt;=2.0, which also means that this is the first version that requires Python 3.</p>
+<ul class="simple">
+<li><p>Compatibility with Bokeh 2.0 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/449">#449</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-7-0">
+<h2>Version 1.7.0<a class="headerlink" href="#version-1-7-0" title="Permalink to this heading">#</a></h2>
+<p>This release adds some major features to HoloViews and adds compatibility for HoloViews 1.13.0. This is also the last release with support for Python 2. Many thanks for the many people who contributed by filing issues and our contributors including @ceball, @jsignell, @ahuang11, @jbednar and @philippjfr.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Added geographic projection awareness to <code class="docutils literal notranslate"><span class="pre">hv.annotate</span></code> function (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/377">#377</a>, <a class="reference external" href="https://github.com/holoviz/geoviews/pull/419">#419</a>)</p></li>
+<li><p>Rewrote geometry interfaces such as geopandas to conform to new HoloViews geometry protocol (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/407">#407</a>)</p></li>
+<li><p>Implement consistent .geom method on geometry types (e.g. Path, Polygons, Points) (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/424">#424</a>)</p></li>
+<li><p>Add new <cite>Rectangles</cite> and <cite>Segments</cite> elements (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/377">#377</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Allow updating user defined HoverTool instances (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/440">#440</a>)</p></li>
+<li><p>Fix for ticks fontsize in matplotlib backend (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/402">#402</a>)</p></li>
+<li><p>Fix for xaxis/yaxis=’bare’ option in matplotlib backend (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/401">#401</a>)</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Compatibility with HoloViews 1.13.0 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/429">#429</a>, <a class="reference external" href="https://github.com/holoviz/geoviews/pull/430">#430</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-6">
+<h2>Version 1.6.6<a class="headerlink" href="#version-1-6-6" title="Permalink to this heading">#</a></h2>
+<p>This is a minor release with a small number of bug fixes. Thanks to @nickhand, @philippjfr and @jsignell for contributing to this release.</p>
+<ul class="simple">
+<li><p>Ensure that projecting QuadMesh does not drop options (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/367">#367</a>)</p></li>
+<li><p>Fix handling of pyproj strings (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/376">#376</a>)</p></li>
+<li><p>Disable <code class="docutils literal notranslate"><span class="pre">fixed_bounds</span></code> to avoid bug when zooming in bokeh (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/390">#390</a>)</p></li>
+<li><p>Add support for geometry columns other than ‘geometry’ on geopandas DataFrames (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/391">#391</a>)</p></li>
+<li><p>Fixed handling of pyproj dependency (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/392">#392</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-5">
+<h2>Version 1.6.5<a class="headerlink" href="#version-1-6-5" title="Permalink to this heading">#</a></h2>
+<p>Minor bugfix release. Includes contributions from @philippjfr:</p>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Fixed issues with target extents in project_image (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/365">#365</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-4">
+<h2>Version 1.6.4<a class="headerlink" href="#version-1-6-4" title="Permalink to this heading">#</a></h2>
+<p>Minor bugfix release. Includes contributions from @philippjfr, @ahuang11, @zassa, and @ceball</p>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Ensure that gridline labels are only drawn once (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/364">#364</a>)</p></li>
+<li><p>Compatibility with latest HoloViews data interface (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/363">#363</a>)</p></li>
+<li><p>Add grid labels (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/351">#351</a>)</p></li>
+<li><p>Hardcode the OSM tile source to https (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/333">#333</a>)</p></li>
+<li><p>Fix hover formatting for Mercator coordinates (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/358">#358</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-3">
+<h2>Version 1.6.3<a class="headerlink" href="#version-1-6-3" title="Permalink to this heading">#</a></h2>
+<p>Minor release, mostly bugfixes. Includes contributions from @philippjfr, @ahuang11, and @rsignell-usgs.</p>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Add geo features for US states (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/312">#312</a>)</p></li>
+<li><p>Add ESRI Ocean tile layers (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/320">#320</a>)</p></li>
+</ul>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Add dtype methods to geometry interfaces (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/345">#345</a>)</p></li>
+<li><p>Ensure that Line Shape is not filled in matplotlib (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/326">#326</a>)</p></li>
+<li><p>Avoid zooming in beyond tile/axis resolution (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/325">#325</a>)</p></li>
+<li><p>Fix gridlines for gv matplotlib overlay (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/308">#308</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-2">
+<h2>Version 1.6.2<a class="headerlink" href="#version-1-6-2" title="Permalink to this heading">#</a></h2>
+<p>Minor release, mostly bugfixes. Includes contributions from @philippjfr.</p>
+<p>New feature:</p>
+<ul class="simple">
+<li><p>Add adaptive geometry resampling operation, allowing working with large shape files interactively, increasing their resolution when zooming in (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/282">#282</a>)</p></li>
+</ul>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Fixed img project if src and target projection are equal (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/288">#288</a>)</p></li>
+<li><p>Added plotting backend load hooks (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/286">#286</a>)</p></li>
+<li><p>Do not import regrid operations by default</p></li>
+<li><p>Fixed re-initialization of backend (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/284">#284</a>)</p></li>
+<li><p>Improved handling of non-default central longitudes (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/281">#281</a>)</p></li>
+<li><p>Small fix for Path longitude wrapping (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/269">#279</a>)</p></li>
+</ul>
+</section>
+<section id="id60">
+<h2>Version 1.6.2<a class="headerlink" href="#id60" title="Permalink to this heading">#</a></h2>
+<p>Includes contributions from @ahuang11 (unlimit vdims) and @philippjfr.</p>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Unlimit the vdims for various elements (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/253">#253</a>)</p></li>
+<li><p>Improve handling of geopandas and empty geometries (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/278">#278</a>)</p></li>
+<li><p>Updated opts syntax in gallery examples (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/277">#277</a>)</p></li>
+<li><p>Fixed bugs projecting <code class="docutils literal notranslate"><span class="pre">Graphs</span></code> (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/276">#276</a>)</p></li>
+<li><p>Ensure backend is initialized on import (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/275">#275</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method to tile sources, to restore constructor-like behavior from previous versions (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/274">#274</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-6-0">
+<h2>Version 1.6.0<a class="headerlink" href="#version-1-6-0" title="Permalink to this heading">#</a></h2>
+<p>This is a major release with a number of important enhancements and bug fixes:</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Complete overhaul of geometry handling including support for geometry with holes and geometry dictionary interface (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/249">#244](https://github.com/holoviz/geoviews/pull/244), #249</a>)</p></li>
+<li><p>Support for holoviews FreehandDraw stream (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/219">#219</a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">gv.load_tiff</span></code> and <code class="docutils literal notranslate"><span class="pre">gv.RGB.load_tiff</span></code> helpers (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/233">#221](https://github.com/holoviz/geoviews/pull/221), #233</a>)</p></li>
+<li><p>Added support for holoviews padding option (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/228">#228</a>)</p></li>
+</ul>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Drop bokeh save tool when tile source is used (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/257">#257</a>)</p></li>
+<li><p>Compatibility with cartopy 0.17 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/254">#254</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Improved handling of Point geometries in geopandas dataframe (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/204">#204</a>)</p></li>
+<li><p>Fixes for projecting draw tool data (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/205">#205</a>)</p></li>
+<li><p>Improvements and fixes for handling of QuadMesh projections (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/250">#250</a>)</p></li>
+<li><p>Fixes for Image longitude wrapping (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/260">#260</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-5-1">
+<h2>Version 1.5.1<a class="headerlink" href="#version-1-5-1" title="Permalink to this heading">#</a></h2>
+<p>This is a bug fix release which includes a number of important fixes and enhancements.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Geopandas interface now supports point geometries (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/186">#186</a>)</p></li>
+<li><p>Geopandas data now supported in the <code class="docutils literal notranslate"><span class="pre">.to</span></code> conversion API (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/186">#186</a>)</p></li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li><p>Fixed some issues to do with tile source attributions (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/176">#176</a>)</p></li>
+<li><p>Fixed bug projecting rectilinear QuadMesh (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/178">#178</a>)</p></li>
+<li><p>Improvements to path/polygon projection and clipping (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/179">#179</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-5-0">
+<h2>Version 1.5.0<a class="headerlink" href="#version-1-5-0" title="Permalink to this heading">#</a></h2>
+<p>Major feature:</p>
+<ul class="simple">
+<li><p>The bokeh backend now supports arbitrary geographic projections, no longer just Web Mercator (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/170">#170</a>)</p></li>
+</ul>
+<p>New components:</p>
+<ul class="simple">
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/Graph.html">Graph element</a> to plot networks of connected nodes (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/115">#115</a>)</p></li>
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/TriMesh.html">TriMesh element</a> and datashading operation to plot small and large irregular triangular meshes (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/115">#115</a>)</p></li>
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/QuadMesh.html">QuadMesh element</a> and datashading operation to plot small and large, irregular rectilinear and curvilinear meshes (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/116">#116</a>)</p></li>
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/VectorField.html">VectorField element</a> and datashading operation to plot small and large quiver plots and other collections of vectors (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/122">#122</a>)</p></li>
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/HexTiles.html">HexTiles element</a> to plot data binned into a hexagonal grid (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/147">#147</a>)</p></li>
+<li><p>Added <a class="reference external" href="http://holoviews.org/reference/elements/bokeh/Labels.html">Labels element</a> to plot a large number of text labels at once (as data rather than as annotations) (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/147">#147</a>)</p></li>
+</ul>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Hover tool now supports displaying geographic coordinates as longitude and latitude (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/158">#158</a>)</p></li>
+<li><p>Added a new <code class="docutils literal notranslate"><span class="pre">geoviews.tile_sources</span></code> module with a predefined set of tile sources (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/165">#165</a>)</p></li>
+<li><p>Wrapped the xESMF library as a regridding and interpolation operation for rectilinear and curvilinear grids (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/127">#127</a>)</p></li>
+<li><p>HoloViews operations including <code class="docutils literal notranslate"><span class="pre">datashade</span></code> and <code class="docutils literal notranslate"><span class="pre">rasterize</span></code> now retain geographic <code class="docutils literal notranslate"><span class="pre">crs</span></code> coordinate system (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/118">#118</a>)</p></li>
+</ul>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Overhauled documentation and added a gallery (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/121">#121</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-4-3">
+<h2>Version 1.4.3<a class="headerlink" href="#version-1-4-3" title="Permalink to this heading">#</a></h2>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Ensured that HoloViews operations such as datashade, aggregate and regrid do not drop the coordinate reference system on the input element (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/118">#118</a>)</p></li>
+<li><p>Unified WMTS support across backends, bokeh and matplotlib now support rendering <code class="docutils literal notranslate"><span class="pre">{X}_{Y}_{Z}</span></code> based web tiles (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/120">#120</a>)</p></li>
+<li><p>Handle projecting of empty Elements (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/131">#131</a>)</p></li>
+<li><p>Set Image element NaN coloring to transparent (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/136/commits/f1f29607079f1f86bce56187dd7a98ca2a1d9eff">#136</a>)</p></li>
+<li><p>Overhauled website with new theme (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/106">#106</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-4-2">
+<h2>Version 1.4.2<a class="headerlink" href="#version-1-4-2" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="version-1-4-1">
+<h2>Version 1.4.1<a class="headerlink" href="#version-1-4-1" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="version-1-4-0">
+<h2>Version 1.4.0<a class="headerlink" href="#version-1-4-0" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Allow specifying WMTS element with just the URL (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/89">#89</a>)</p></li>
+<li><p>Added GeoPandas interface to plot geometries more easily (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/88">#88</a>)</p></li>
+<li><p>Added further projection operations allowing most geographic element types to be explicitly projected (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/88">#88</a>)</p></li>
+<li><p>Enabled MercatorTicker on geographic bokeh plots ensuring axes are labelled with latitudes and longitudes (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/64">#64</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-3-2">
+<h2>Version 1.3.2<a class="headerlink" href="#version-1-3-2" title="Permalink to this heading">#</a></h2>
+<p>This is a minor release reapplying a fix which was accidentally reverted in 1.3.1:</p>
+<ul class="simple">
+<li><p>The WMTS Element now accepts a tile source URL directly for the bokeh backend (PR #83)</p></li>
+</ul>
+</section>
+<section id="version-1-3-1">
+<h2>Version 1.3.1<a class="headerlink" href="#version-1-3-1" title="Permalink to this heading">#</a></h2>
+<p>This is a minor release with one small improvements:</p>
+<ul class="simple">
+<li><p>The WMTS Element now accepts a tile source URL directly for the bokeh backend (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/83">PR #83</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-3-0">
+<h2>Version 1.3.0<a class="headerlink" href="#version-1-3-0" title="Permalink to this heading">#</a></h2>
+<p>This release is mostly a compatibility release for HoloViews 1.8. It includes a small number of significant fixes and changes:</p>
+<ul class="simple">
+<li><p>Introduces a general <code class="docutils literal notranslate"><span class="pre">project</span></code> operation to project most Element types from one <code class="docutils literal notranslate"><span class="pre">crs</span></code> to another (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/69">#69</a>)</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">gv.RGB</span></code> Element type useful for representing datashader aggregates and particularly loading GeoTiffs with xarray (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/75">#75</a>)</p></li>
+<li><p>All geoviews geographic Elements declare a <code class="docutils literal notranslate"><span class="pre">crs</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">PlateCarree()</span></code> (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/76">#76</a>)</p></li>
+<li><p>Fix for compatibility with HoloViews 1.8 (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/77">#77</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-2-0">
+<h2>Version 1.2.0<a class="headerlink" href="#version-1-2-0" title="Permalink to this heading">#</a></h2>
+<p>This is a minor release mostly to maintain compatibility with the recently released HoloViews 1.7.0.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">project_shape</span></code> operations (<a class="reference external" href="https://github.com/holoviz/geoviews/commit/c6c5ce261aa725853e00094fbe59ff3650ad1e19">c6c5ce</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Shape.from_records</span></code> function now supports <code class="docutils literal notranslate"><span class="pre">drop_missing</span></code> option.  #63</p></li>
+<li><p>Compatibility with HoloViews (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/59">#59</a>, <a class="reference external" href="https://github.com/holoviz/geoviews/pull/60">#60</a>)</p></li>
+<li><p>Bokeh box_zoom tool now matches aspect on geographic plots (<a class="reference external" href="https://github.com/holoviz/geoviews/commit/c6c41a979dca928c83d74c3773df458840832907">c6c41a9</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix for <code class="docutils literal notranslate"><span class="pre">Shape</span></code> Element colormapping (<a class="reference external" href="https://github.com/holoviz/geoviews/pull/58">#58</a>)</p></li>
+<li><p>Geographic objects did not inherit <code class="docutils literal notranslate"><span class="pre">crs</span></code> on clone (<a class="reference external" href="https://github.com/holoviz/geoviews/commit/df0ba893e273e8a143d78419f6491c27ed814fe5">df0ba8</a>)</p></li>
+</ul>
+</section>
+<section id="version-1-1-0">
+<h2>Version 1.1.0<a class="headerlink" href="#version-1-1-0" title="Permalink to this heading">#</a></h2>
+<p>Minor release to improve usability:</p>
+<ul class="simple">
+<li><p>Improved layouts, reducing whitespace around non-square plots</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">geoviews.features</span></code> module for simple access to cartopy Features.</p></li>
+<li><p>Improved tutorials</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">gv.Dataset</span></code> class to simplify keeping track of coordinate systems</p></li>
+</ul>
+</section>
+<section id="version-1-0-0">
+<h2>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this heading">#</a></h2>
+<p>First stable version, with support for matplotlib and bokeh (web Mercator projection only). Requires HoloViews 1.6+ to be able to use data from xarray or iris.</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="topics.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Topics</p>
+</div>
+</a>
+<a class="right-next" href="about.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">About</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-11-0">Version 1.11.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-10-1">Version 1.10.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-10-0">Version 1.10.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-6">Version 1.9.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-5">Version 1.9.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-4">Version 1.9.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-3">Version 1.9.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-2">Version 1.9.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-1">Version 1.9.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-9-0">Version 1.9.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-8-2">Version 1.8.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-8-1">Version 1.8.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-8-0">Version 1.8.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-7-0">Version 1.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-6">Version 1.6.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-5">Version 1.6.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-4">Version 1.6.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-3">Version 1.6.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-2">Version 1.6.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id60">Version 1.6.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-6-0">Version 1.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-5-1">Version 1.5.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-5-0">Version 1.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-4-3">Version 1.4.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-4-2">Version 1.4.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-4-1">Version 1.4.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-4-0">Version 1.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-3-2">Version 1.3.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-3-1">Version 1.3.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-3-0">Version 1.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-2-0">Version 1.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-1-0">Version 1.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-0-0">Version 1.0.0</a></li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="_sources/releases.rst.txt">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2018 HoloViz Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>
